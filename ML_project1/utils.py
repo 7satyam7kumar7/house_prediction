@@ -28,12 +28,12 @@ def get_prediction(loc,sqft,bhk,bath):
  try:
   loc_ind=__data_col.index(loc.lower())
   x[loc_ind]=1
-  x_df = pd.DataFrame([x], columns=__data_col)
+  # x_df = pd.DataFrame([x], columns=__data_col)
 
-  return round(float(__model.predict(x_df)[0]), 2)
+  return round(float(__model.predict([x])[0]), 2)
  except:
-  x_df = pd.DataFrame([x], columns=__data_col)
-  return round(float(__model.predict(x_df)[0]), 2)
+  # x_df = pd.DataFrame([x], columns=__data_col)
+  return round(float(__model.predict([x])[0]), 2)
  
 
  

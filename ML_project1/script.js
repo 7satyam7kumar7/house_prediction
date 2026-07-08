@@ -76,6 +76,8 @@ document
             const data = await response.json();
 
             console.log(data);
+            document.getElementById("predicted-price").innerHTML =
+             `<h2> ₹ ${data.estimated_price} Lakhs</h2>`;
 
         } catch (error) {
             console.error(error);
